@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export const API_BASE_URL = import.meta.env.VITE_API_URL || '/api';
+export const API_BASE_URL = (import.meta.env.VITE_API_URL || '/api').replace(/\/+$/, '');
 
 export interface ChatMessage {
   id: string;
