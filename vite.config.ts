@@ -5,10 +5,15 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   server: {
+    proxy: {
+      '/api': {
+        target: 'https://vibe-match-api-60fd.onrender.com',
+        changeOrigin: true,
+      }
+    },
     allowedHosts: [
-      '6584-103-161-144-59.ngrok-free.app',
-      '.ngrok-free.app',
-      '.ngrok.io'
+      'vibe-match-api-60fd.onrender.com',
+      '.onrender.com',
     ]
   }
 })
